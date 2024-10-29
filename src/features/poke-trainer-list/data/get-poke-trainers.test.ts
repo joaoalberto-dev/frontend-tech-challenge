@@ -10,33 +10,27 @@ vi.mock("@/core/services/rick-and-morty", () => ({
 }));
 
 describe("getPokeTrainers", () => {
+  const response = {
+    info: {
+      count: 0,
+      pages: 0,
+      next: "",
+      prev: "",
+    },
+    results: [],
+  };
+
   test("should call rickAndMortyApi.get with the correct endpoint", async () => {
-    const mockResponse: RickAndMortyResponse = {
-      info: {
-        count: 0,
-        pages: 0,
-        next: "",
-        prev: "",
-      },
-      results: [],
-    };
+    const mockResponse: RickAndMortyResponse = response;
     (rickAndMortyApi.get as Mock).mockResolvedValue(mockResponse);
 
-    await getPokeTrainers();
+    await getPokeTrainers({});
 
-    expect(rickAndMortyApi.get).toHaveBeenCalledWith("/character");
+    expect(rickAndMortyApi.get).toHaveBeenCalledWith("/character?");
   });
 
   test("should return the response from rickAndMortyApi.get", async () => {
-    const mockResponse: RickAndMortyResponse = {
-      info: {
-        count: 0,
-        pages: 0,
-        next: "",
-        prev: "",
-      },
-      results: [],
-    };
+    const mockResponse: RickAndMortyResponse = response;
     (rickAndMortyApi.get as Mock).mockResolvedValue(mockResponse);
 
     const result = await getPokeTrainers();
