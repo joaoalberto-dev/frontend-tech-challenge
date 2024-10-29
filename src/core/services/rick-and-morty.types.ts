@@ -1,11 +1,11 @@
-type FilterStatus = 'alive' | 'dead' | 'unknown'
-type FilterGender = 'female' | 'male' | 'genderless' | 'unknown'
+type FilterStatus = "alive" | "dead" | "unknown";
+type FilterGender = "female" | "male" | "genderless" | "unknown";
 
 type RickAndMortyPaginationInfo = {
   count: number;
   pages: number;
-  next: string;
-  prev: string;
+  next: string | null;
+  prev: string | null;
 };
 
 type RickAndMortyFilterParams = {
@@ -14,7 +14,8 @@ type RickAndMortyFilterParams = {
   species: string;
   type: string;
   gender: FilterGender;
-}
+  page: string;
+};
 
 type RickAndMortyCharacter = {
   id: number;
@@ -46,5 +47,5 @@ export type {
   RickAndMortyPaginationInfo,
   RickAndMortyCharacter,
   RickAndMortyResponse,
-  RickAndMortyFilterParams
+  RickAndMortyFilterParams,
 };
