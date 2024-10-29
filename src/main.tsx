@@ -1,18 +1,21 @@
+import "./index.css";
+
+import { PokeTrainerListPage } from "@/features/poke-trainer-list/ui/page.tsx";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "./Home.tsx";
-import { Profile } from "./Profile.tsx";
+import { RootLayout } from "./core/components/layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/profile",
-    element: <Profile />,
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/poke-trainers",
+        element: <PokeTrainerListPage />,
+      },
+    ],
   },
 ]);
 
