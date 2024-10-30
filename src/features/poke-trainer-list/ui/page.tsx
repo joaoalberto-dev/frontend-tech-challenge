@@ -1,3 +1,7 @@
+import { Card } from "@/core/components/card";
+import { EmptyState } from "@/core/components/empty-state";
+import { List } from "@/core/components/list";
+import { Search } from "@/core/components/search";
 import {
   RickAndMortyCharacter,
   RickAndMortyResponse,
@@ -5,10 +9,7 @@ import {
 import { useMemo } from "react";
 import { usePokeTrainerFetch } from "../hooks/use-poke-trainer-fetch";
 import { usePokeTrainerSearch } from "../hooks/use-poke-trainer-search";
-import { List } from "./list/list";
 import { LoadMore } from "./load-more/load-more";
-import { Search } from "./search/search";
-import { EmptyList } from "./empty-list/empty-list";
 
 function PokeTrainerListPage() {
   const { name, handleChange } = usePokeTrainerSearch();
@@ -41,7 +42,19 @@ function PokeTrainerListPage() {
       <div className="p-5 md:p-10 max-w-full xl:max-w-[1920px] mx-auto">
         {characters.length > 0 && (
           <>
-            <List characters={characters} />
+            <List
+              items={characters}
+              renderItem={({ id, name, image }) => (
+                <Card
+                  key={id}
+                  kind="link"
+                  link={`/${id}`}
+                  id={id}
+                  name={name}
+                  image={image}
+                />
+              )}
+            />
             <LoadMore
               loadMore={loadMore}
               disabled={!hasMore || isLoading}
@@ -49,7 +62,9 @@ function PokeTrainerListPage() {
             />
           </>
         )}
-        {characters.length <= 0 && !isLoading && <EmptyList />}
+        {characters.length <= 0 && !isLoading && (
+          <EmptyState text="No trainers found." />
+        )}
       </div>
     </div>
   );
