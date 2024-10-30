@@ -7,7 +7,7 @@ async function pokemonListLoader() {
       window.localStorage.getItem("POKEMON_LIST") ?? "{}"
     );
 
-    if (!pokemonList) {
+    if (!Object.keys(pokemonList).length) {
       pokemonList = await pokemonApi.get<PokemonIndexListResponse>(
         "/pokemon?limit=10000"
       );
