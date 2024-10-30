@@ -32,7 +32,7 @@ function Card({ id, name, image, link, onClick, kind }: CardProps) {
 
   return (
     <Link
-      to={link || "#"}
+      to={link || "/"}
       onClick={handleClick}
       key={id}
       className="w-full aspect-square relative block rounded-lg overflow-hidden"

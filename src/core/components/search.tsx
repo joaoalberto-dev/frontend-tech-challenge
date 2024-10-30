@@ -11,7 +11,11 @@ function Search({ isLoading, onChange, defaultValue }: SearchProps) {
   return (
     <form className="mt-8 md:mt-0 w-full md:w-auto bg-white">
       <div className="flex relative gap-2 border-2 border-neutral-200 focus-within:border-neutral-950 p-2 rounded-md">
-        {isLoading ? <LoaderIcon className="animate-spin" /> : <SearchIcon />}
+        {isLoading ? (
+          <LoaderIcon data-testid="loader" className="animate-spin" />
+        ) : (
+          <SearchIcon data-testid="search-icon" />
+        )}
         <input
           className="outline-none flex-1"
           type="search"
