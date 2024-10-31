@@ -1,25 +1,24 @@
 import { MouseEvent } from "react";
 import { Link } from "react-router-dom";
 
-type CardProps =
+type CardProps = {
+  id: string | number;
+  name: string;
+  image: string;
+  kind: "link" | "button";
+  cardClassName?: string;
+} & (
   | {
-      id: string | number;
-      name: string;
-      image: string;
-      kind: "link" | "button";
-      cardClassName?: string;
-    } & (
-      | {
-          kind: "link";
-          link: string;
-          onClick?: never;
-        }
-      | {
-          kind: "button";
-          link?: never;
-          onClick: (id: string | number) => void;
-        }
-    );
+      kind: "link";
+      link: string;
+      onClick?: never;
+    }
+  | {
+      kind: "button";
+      link?: never;
+      onClick: (id: string | number) => void;
+    }
+);
 
 function Card({
   id,

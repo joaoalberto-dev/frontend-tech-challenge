@@ -38,12 +38,12 @@ describe("List", () => {
     );
 
     const screen = render(
-      <List<TestItem> items={testItems} renderItem={renderItem} />
+      <List<TestItem> items={testItems} renderItem={renderItem} />,
     );
 
     testItems.forEach((item) => {
       expect(screen.getByTestId(`item-${item.id}`)).toHaveTextContent(
-        item.name
+        item.name,
       );
     });
   });

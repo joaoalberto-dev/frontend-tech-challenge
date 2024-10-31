@@ -9,7 +9,7 @@ function usePokeTrainerSearch() {
   const handleChange = useDebounceCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       setSearchParams({ name: event.target.value });
-    }
+    },
   );
 
   return {

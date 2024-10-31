@@ -27,7 +27,7 @@ function PokeTrainerDetail() {
     (event: ChangeEvent<HTMLInputElement>) => {
       setSearchTerm(event.target.value);
     },
-    1000
+    1000,
   );
   const { list, canAdd } = useFavoritePokemon();
 

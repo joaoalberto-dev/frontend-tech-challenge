@@ -23,7 +23,7 @@ function PokeTrainerListPage() {
         ...previous,
         ...current.results,
       ],
-      []
+      [],
     );
   }, [data]);
 

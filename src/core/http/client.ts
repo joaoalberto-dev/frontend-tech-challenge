@@ -7,7 +7,10 @@ async function httpClient<T>(
   try {
     const response = await fetch(url, options);
 
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}, statusText: ${response.statusText}`);
+    if (!response.ok)
+      throw new Error(
+        `HTTP error! status: ${response.status}, statusText: ${response.statusText}`,
+      );
 
     const contentType = response.headers.get("content-type");
 
@@ -26,7 +29,7 @@ async function httpClient<T>(
 function createHttpClient(baseUrl: string) {
   return {
     get: <T>(path: string, options: FetchOptions = {}) =>
-      httpClient<T>(baseUrl + path, { ...options, method: 'GET' }),
+      httpClient<T>(baseUrl + path, { ...options, method: "GET" }),
   };
 }
 

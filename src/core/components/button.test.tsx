@@ -1,5 +1,5 @@
-import { describe, test, expect, vi } from "vitest";
-import { render, fireEvent } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
+import { describe, expect, test, vi } from "vitest";
 import { Button } from "./button";
 
 describe("Button", () => {
@@ -7,7 +7,7 @@ describe("Button", () => {
     const screen = render(
       <Button onClick={() => {}} disabled={false}>
         Click me
-      </Button>
+      </Button>,
     );
 
     expect(screen.getByText("Click me")).toBeInTheDocument();
@@ -18,7 +18,7 @@ describe("Button", () => {
     const screen = render(
       <Button onClick={handleClick} disabled={false}>
         Click me
-      </Button>
+      </Button>,
     );
 
     fireEvent.click(screen.getByText("Click me"));
@@ -29,7 +29,7 @@ describe("Button", () => {
     const screen = render(
       <Button onClick={() => {}} disabled={true}>
         Click me
-      </Button>
+      </Button>,
     );
 
     const button = screen.getByText("Click me");
@@ -42,7 +42,7 @@ describe("Button", () => {
     const screen = render(
       <Button onClick={handleClick} disabled={true}>
         Click me
-      </Button>
+      </Button>,
     );
 
     fireEvent.click(screen.getByText("Click me"));
@@ -53,7 +53,7 @@ describe("Button", () => {
     const screen = render(
       <Button onClick={() => {}} disabled={false} aria-label="Custom button">
         Click me
-      </Button>
+      </Button>,
     );
 
     const button = screen.getByText("Click me");

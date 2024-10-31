@@ -1,5 +1,5 @@
-import { ReactNode, ButtonHTMLAttributes } from "react";
-import { noop } from "../utils/noop";
+import { noop } from "@/core/utils/noop";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
 type ButtonProps = Partial<ButtonHTMLAttributes<HTMLButtonElement>> & {
   children: ReactNode;

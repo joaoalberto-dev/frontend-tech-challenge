@@ -19,7 +19,7 @@ describe("Card", () => {
       <Card {...defaultProps} kind="link" link="/test-link" />,
       {
         wrapper: CardWrapper,
-      }
+      },
     );
 
     expect(screen.getByText("Test Card")).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe("Card", () => {
       <Card {...defaultProps} kind="button" onClick={handleClick} />,
       {
         wrapper: CardWrapper,
-      }
+      },
     );
 
     expect(screen.getByText("Test Card")).toBeInTheDocument();
@@ -48,7 +48,7 @@ describe("Card", () => {
       <Card {...defaultProps} kind="button" onClick={handleClick} />,
       {
         wrapper: CardWrapper,
-      }
+      },
     );
 
     fireEvent.click(screen.getByRole("link"));
@@ -62,7 +62,7 @@ describe("Card", () => {
       <Card {...defaultProps} kind="link" link="/test-link" />,
       {
         wrapper: CardWrapper,
-      }
+      },
     );
 
     fireEvent.click(screen.getByRole("link"));

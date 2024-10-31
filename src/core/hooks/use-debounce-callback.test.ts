@@ -52,7 +52,7 @@ describe("useDebounceCallback", () => {
   it("should preserve the callback arguments", () => {
     const callback = vi.fn();
     const { result } = renderHook(() =>
-      useDebounceCallback((a: number, b: string) => callback(a, b))
+      useDebounceCallback((a: number, b: string) => callback(a, b)),
     );
 
     result.current(42, "test");
