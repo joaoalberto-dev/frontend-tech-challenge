@@ -11,6 +11,9 @@ import { useDebounceCallback } from "@/core/hooks/use-debounce-callback";
 import { useFavoritePokemon } from "../context/favorite-pokemon";
 import { EmptyState } from "@/core/components/empty-state";
 import { FavoritePokemonCard } from "./favorite-card/favorite-card";
+import { Button } from "@/core/components/button";
+import { noop } from "@/core/utils/noop";
+import { Swords } from "lucide-react";
 
 function PokeTrainerDetail() {
   const { id } = useParams();
@@ -26,11 +29,12 @@ function PokeTrainerDetail() {
     },
     1000
   );
-  const { list } = useFavoritePokemon();
+  const { list, canAdd } = useFavoritePokemon();
 
   if (!profile || !id) return null;
 
-  const favs = list(id);
+  const favorites = list(id);
+  const trainerCanAdd = canAdd(id);
 
   return (
     <div>
@@ -39,19 +43,27 @@ function PokeTrainerDetail() {
         <PokeTrainerStats trainer={profile} />
         <h1 className="text-3xl">Favorite pokemons</h1>
         <div className="flex items-center justify-center">
-          {!favs.length ? (
+          {!favorites.length ? (
             <EmptyState text="No favorites found" />
           ) : (
-            <List
-              items={favs}
-              renderItem={([_, pokemon]) => (
-                <FavoritePokemonCard
-                  key={pokemon.id}
-                  pokemon={pokemon}
-                  trainerId={id}
-                />
+            <div className="flex p-4 bg-sky-100 rounded-md flex-col gap-2 w-full">
+              <List
+                items={favorites}
+                containerClassName="lg:grid-cols-3 xl:grid-cols-6"
+                renderItem={([_, pokemon]) => (
+                  <FavoritePokemonCard
+                    key={pokemon.id}
+                    pokemon={pokemon}
+                    trainerId={id}
+                  />
+                )}
+              />
+              {trainerCanAdd && (
+                <p className="text-xs text-sky-600">
+                  Select at least 6 pokemons to start a battle.
+                </p>
               )}
-            />
+            </div>
           )}
         </div>
         <h1 className="text-3xl">Search favorite pokemons</h1>
@@ -62,6 +74,10 @@ function PokeTrainerDetail() {
             renderItem={({ url }) => <PokemonCard url={url} key={url} />}
           />
         )}
+        <Button disabled={trainerCanAdd} onClick={noop}>
+          <Swords />
+          Battle
+        </Button>
       </div>
     </div>
   );
