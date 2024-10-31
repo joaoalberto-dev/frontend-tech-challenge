@@ -2,8 +2,8 @@ import { Card } from "@/core/components/card";
 import { httpClient } from "@/core/http/client";
 import { Pokemon } from "@/core/services/pokemon-api.types";
 import { useQuery } from "@tanstack/react-query";
-import { useFavoritePokemon } from "../../context/favorite-pokemon";
 import { useParams } from "react-router-dom";
+import { useFavoritePokemon } from "../../context/favorite-pokemon";
 
 type PokemonCardProps = {
   url: string;
@@ -11,7 +11,7 @@ type PokemonCardProps = {
 
 function PokemonCard({ url }: PokemonCardProps) {
   const { id } = useParams();
-  const { add } = useFavoritePokemon();
+  const { add, canAdd } = useFavoritePokemon();
   const query = useQuery<Pokemon>({
     queryKey: ["pokemon", url],
     queryFn: () => httpClient(url),
@@ -24,6 +24,7 @@ function PokemonCard({ url }: PokemonCardProps) {
       kind="button"
       id={query.data.id}
       name={query.data.name}
+      cardClassName={canAdd(id) ? "" : "cursor-not-allowed"}
       image={
         query.data.sprites.front_default ||
         query.data.sprites.other["official-artwork"].front_default ||
