@@ -2,30 +2,15 @@ import { Card } from "@/core/components/card";
 import { EmptyState } from "@/core/components/empty-state";
 import { List } from "@/core/components/list";
 import { Search } from "@/core/components/search";
-import {
-  RickAndMortyCharacter,
-  RickAndMortyResponse,
-} from "@/core/services/rick-and-morty.types";
-import { useMemo } from "react";
 import { usePokeTrainerFetch } from "../hooks/use-poke-trainer-fetch";
 import { usePokeTrainerSearch } from "../hooks/use-poke-trainer-search";
 import { LoadMore } from "./load-more/load-more";
+import { useFlatPokeTrainers } from "../hooks/use-poke-trainer-flat";
 
 function PokeTrainerListPage() {
   const { name, handleChange } = usePokeTrainerSearch();
   const { data, loadMore, hasMore, isLoading } = usePokeTrainerFetch(name);
-
-  const characters = useMemo(() => {
-    if (!data) return [];
-
-    return data.pages.reduce(
-      (previous: RickAndMortyCharacter[], current: RickAndMortyResponse) => [
-        ...previous,
-        ...current.results,
-      ],
-      [],
-    );
-  }, [data]);
+  const characters = useFlatPokeTrainers(data);
 
   return (
     <div>
