@@ -6,6 +6,7 @@ type FavoritePokemonStore = {
   add: (trainerId: string, pokemon: Pokemon) => void;
   remove: (trainerId: string, pokemon: Pokemon) => void;
   list: (trainerId: string) => [string, Pokemon][];
+  canAdd: (trainerId: string) => boolean;
 };
 
 const useFavoritePokemon = create<FavoritePokemonStore>((set, get) => ({
@@ -16,7 +17,7 @@ const useFavoritePokemon = create<FavoritePokemonStore>((set, get) => ({
 
       if (!trainer) trainer = new Map();
 
-      if (!trainer.has(String(pokemon.id))) {
+      if (!trainer.has(String(pokemon.id)) && trainer.size <= 6) {
         trainer.set(String(pokemon.id), pokemon);
         favoritePokemons[trainerId] = trainer;
       }
@@ -41,6 +42,11 @@ const useFavoritePokemon = create<FavoritePokemonStore>((set, get) => ({
     const items = Array.from(trainer);
 
     return items;
+  },
+  canAdd(trainerId) {
+    const trainer = get().favoritePokemons[trainerId] || new Map();
+
+    return trainer.size < 6;
   },
 }));
 
