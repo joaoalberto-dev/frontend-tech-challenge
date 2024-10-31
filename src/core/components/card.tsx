@@ -7,6 +7,7 @@ type CardProps =
       name: string;
       image: string;
       kind: "link" | "button";
+      cardClassName?: string;
     } & (
       | {
           kind: "link";
@@ -20,7 +21,15 @@ type CardProps =
         }
     );
 
-function Card({ id, name, image, link, onClick, kind }: CardProps) {
+function Card({
+  id,
+  name,
+  image,
+  link,
+  onClick,
+  kind,
+  cardClassName = "",
+}: CardProps) {
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {
     if (kind === "button" && onClick) {
       event.preventDefault();
@@ -35,13 +44,13 @@ function Card({ id, name, image, link, onClick, kind }: CardProps) {
       to={link || "/"}
       onClick={handleClick}
       key={id}
-      className="w-full aspect-square relative block rounded-lg overflow-hidden"
+      className={`w-full aspect-square relative block rounded-lg overflow-hidden ${cardClassName}`}
     >
       <img
         src={image}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute bg-white inset-0 w-full h-full object-cover"
       />
-      <div className="absolute p-4 from-neutral-200 to-[50%] flex items-end text-white to-transparent bg-gradient-to-t inset-0 w-full bottom-0">
+      <div className="absolute p-4 from-neutral-300 to-[50%] flex items-end text-white to-transparent bg-gradient-to-t inset-0 w-full bottom-0">
         <p className="text-xs font-bold">{name}</p>
       </div>
     </Link>
