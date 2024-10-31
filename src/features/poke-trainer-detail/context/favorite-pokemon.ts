@@ -17,7 +17,7 @@ const useFavoritePokemon = create<FavoritePokemonStore>((set, get) => ({
 
       if (!trainer) trainer = new Map();
 
-      if (!trainer.has(String(pokemon.id)) && trainer.size <= 6) {
+      if (!trainer.has(String(pokemon.id)) && trainer.size < 6) {
         trainer.set(String(pokemon.id), pokemon);
         favoritePokemons[trainerId] = trainer;
       }
@@ -27,7 +27,7 @@ const useFavoritePokemon = create<FavoritePokemonStore>((set, get) => ({
   },
   remove(trainerId, pokemon) {
     set(({ favoritePokemons }) => {
-      const trainer = favoritePokemons[trainerId];
+      const trainer = favoritePokemons[trainerId] || new Map();
 
       if (trainer.has(String(pokemon.id))) {
         trainer.delete(String(pokemon.id));
