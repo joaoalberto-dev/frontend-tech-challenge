@@ -3,7 +3,7 @@ import { noop } from "../utils/noop";
 
 type ButtonProps = Partial<ButtonHTMLAttributes<HTMLButtonElement>> & {
   children: ReactNode;
-  disabled: boolean;
+  disabled?: boolean;
   onClick: () => void;
 };
 
