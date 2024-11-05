@@ -20,7 +20,9 @@ function PokeTrainerDetail() {
   const { data: pokemonList } = usePokemonList();
   const [searchTerm, setSearchTerm] = useState("");
   const filteredPokemonList = useMemo(() => {
-    return pokemonList?.filter((pokemon) => pokemon.name.includes(searchTerm));
+    return pokemonList?.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   }, [searchTerm, pokemonList]);
   const handleChange = useDebounceCallback(
     (event: ChangeEvent<HTMLInputElement>) => {

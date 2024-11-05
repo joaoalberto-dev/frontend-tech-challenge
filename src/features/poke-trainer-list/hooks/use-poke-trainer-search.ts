@@ -8,8 +8,8 @@ function usePokeTrainerSearch() {
 
   const handleChange = useDebounceCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
-      setSearchParams({ name: event.target.value });
-    },
+      setSearchParams({ name: String(event.target.value).toLowerCase() });
+    }
   );
 
   return {
