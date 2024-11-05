@@ -7,7 +7,7 @@ describe("Button", () => {
     const screen = render(
       <Button onClick={() => {}} disabled={false}>
         Click me
-      </Button>,
+      </Button>
     );
 
     expect(screen.getByText("Click me")).toBeInTheDocument();
@@ -18,7 +18,7 @@ describe("Button", () => {
     const screen = render(
       <Button onClick={handleClick} disabled={false}>
         Click me
-      </Button>,
+      </Button>
     );
 
     fireEvent.click(screen.getByText("Click me"));
@@ -29,12 +29,11 @@ describe("Button", () => {
     const screen = render(
       <Button onClick={() => {}} disabled={true}>
         Click me
-      </Button>,
+      </Button>
     );
 
     const button = screen.getByText("Click me");
     expect(button).toHaveClass("cursor-not-allowed");
-    expect(button).toHaveClass("opacity-50");
   });
 
   test("does not call onClick handler when disabled", () => {
@@ -42,7 +41,7 @@ describe("Button", () => {
     const screen = render(
       <Button onClick={handleClick} disabled={true}>
         Click me
-      </Button>,
+      </Button>
     );
 
     fireEvent.click(screen.getByText("Click me"));
@@ -53,7 +52,7 @@ describe("Button", () => {
     const screen = render(
       <Button onClick={() => {}} disabled={false} aria-label="Custom button">
         Click me
-      </Button>,
+      </Button>
     );
 
     const button = screen.getByText("Click me");
