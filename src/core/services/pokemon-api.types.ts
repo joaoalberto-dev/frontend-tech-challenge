@@ -167,10 +167,33 @@ type Stat = {
   };
 };
 
+type PokemonTypes =
+  | "bug"
+  | "dark"
+  | "dragon"
+  | "electric"
+  | "fairy"
+  | "fighting"
+  | "fire"
+  | "flying"
+  | "ghost"
+  | "grass"
+  | "ground"
+  | "ice"
+  | "normal"
+  | "poison"
+  | "psychic"
+  | "rock"
+  | "shadow"
+  | "steel"
+  | "stellar"
+  | "unknown"
+  | "water";
+
 type Type = {
   slot: number;
   type: {
-    name: string;
+    name: PokemonTypes;
     url: string;
   };
 };
@@ -183,19 +206,22 @@ type PastType = {
   types: Type[];
 };
 
-type PokemonIndex = {
+type ResourceIndex = {
   name: string;
   url: string;
 };
 
-type PokemonIndexList = PokemonIndex[];
+type PokemonIndexList = ResourceIndex[];
 
-type PokemonIndexListResponse = {
+type PokemonApiResponseList<T> = {
   count: number;
   next: string | null;
   previous: string | null;
-  results: PokemonIndexList;
+  results: T;
 };
+
+type PokemonIndexListResponse = PokemonApiResponseList<PokemonIndexList>;
+type PokemonTypeListResponse = PokemonApiResponseList<ResourceIndex[]>;
 
 type Pokemon = {
   id: number;
@@ -225,9 +251,82 @@ type Pokemon = {
   past_types: PastType[];
 };
 
+type TypeRelation = {
+  name: string;
+  url: string;
+};
+
+type DamageRelations = {
+  no_damage_to: TypeRelation[];
+  half_damage_to: TypeRelation[];
+  double_damage_to: TypeRelation[];
+  no_damage_from: TypeRelation[];
+  half_damage_from: TypeRelation[];
+  double_damage_from: TypeRelation[];
+};
+
+type PastDamageRelation = {
+  generation: {
+    name: string;
+    url: string;
+  };
+  damage_relations: DamageRelations;
+};
+
+type TypeGameIndex = {
+  game_index: number;
+  generation: {
+    name: string;
+    url: string;
+  };
+};
+
+type TypeName = {
+  name: string;
+  language: {
+    name: string;
+    url: string;
+  };
+};
+
+type TypePokemon = {
+  slot: number;
+  pokemon: {
+    name: string;
+    url: string;
+  };
+};
+
+type PokemonType = {
+  id: number;
+  name: string;
+  damage_relations: DamageRelations;
+  past_damage_relations: PastDamageRelation[];
+  game_indices: TypeGameIndex[];
+  generation: {
+    name: string;
+    url: string;
+  };
+  move_damage_class: {
+    name: string;
+    url: string;
+  };
+  names: TypeName[];
+  pokemon: TypePokemon[];
+  moves: {
+    name: string;
+    url: string;
+  }[];
+};
+
 export type {
   Pokemon,
   PokemonIndexList,
-  PokemonIndex,
+  ResourceIndex,
   PokemonIndexListResponse,
+  PokemonTypes,
+  PokemonType,
+  DamageRelations,
+  TypeRelation,
+  PokemonTypeListResponse,
 };
