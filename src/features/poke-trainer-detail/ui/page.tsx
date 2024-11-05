@@ -1,19 +1,18 @@
-import { useParams } from "react-router-dom";
-import { usePokeTrainerProfile } from "../hooks/use-poke-trainer-profile";
-import { PokeTrainerHeader } from "./header/header";
-import { PokeTrainerStats } from "./stats/stats";
-import { usePokemonList } from "@/features/pokemon/hooks/use-pokemon-list";
-import { Search } from "@/core/components/search";
-import { ChangeEvent, useMemo, useState } from "react";
-import { List } from "@/core/components/list";
-import { PokemonCard } from "./card/card";
-import { useDebounceCallback } from "@/core/hooks/use-debounce-callback";
-import { useFavoritePokemon } from "../context/favorite-pokemon";
-import { EmptyState } from "@/core/components/empty-state";
-import { FavoritePokemonCard } from "./favorite-card/favorite-card";
 import { Button } from "@/core/components/button";
-import { noop } from "@/core/utils/noop";
+import { EmptyState } from "@/core/components/empty-state";
+import { List } from "@/core/components/list";
+import { PokeTrainerHeader } from "@/core/components/poke-trainer-header";
+import { Search } from "@/core/components/search";
+import { useDebounceCallback } from "@/core/hooks/use-debounce-callback";
+import { usePokemonList } from "@/features/pokemon/hooks/use-pokemon-list";
 import { Swords } from "lucide-react";
+import { ChangeEvent, useMemo, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useFavoritePokemon } from "../context/favorite-pokemon";
+import { usePokeTrainerProfile } from "../hooks/use-poke-trainer-profile";
+import { PokemonCard } from "./card/card";
+import { FavoritePokemonCard } from "./favorite-card/favorite-card";
+import { PokeTrainerStats } from "./stats/stats";
 
 function PokeTrainerDetail() {
   const { id } = useParams();
@@ -27,9 +26,10 @@ function PokeTrainerDetail() {
     (event: ChangeEvent<HTMLInputElement>) => {
       setSearchTerm(event.target.value);
     },
-    1000,
+    1000
   );
   const { list, canAdd } = useFavoritePokemon();
+  const navigate = useNavigate();
 
   if (!profile || !id) return null;
 
@@ -74,9 +74,8 @@ function PokeTrainerDetail() {
             renderItem={({ url }) => <PokemonCard url={url} key={url} />}
           />
         )}
-        <Button disabled={trainerCanAdd} onClick={noop}>
+        <Button disabled={trainerCanAdd} onClick={() => navigate("battle")}>
           <Swords />
-          Battle
         </Button>
       </div>
     </div>
