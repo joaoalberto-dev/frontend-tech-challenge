@@ -10,7 +10,7 @@ export default tseslint.config(
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],
-    ignores: ["vercel.json", "**/*.test.{ts,tsx}"],
+    ignores: ["vercel.json", "**/*.test.{ts,tsx}", "./coverage/**"],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
