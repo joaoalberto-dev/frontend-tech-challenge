@@ -6,7 +6,10 @@ import { pokemonListLoader } from "@/features/pokemon/data/pokemon-list-loader";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { RootLayout } from "./core/components/layout";
+import { RootLayout } from "@/core/components/layout";
+import { Battle } from "@/features/battle/ui/page";
+import { getPokeTrainers } from "@/features/poke-trainer-list/data/get-poke-trainers";
+import { pokemonTypesListLoader } from "@/features/pokemon/data/pokemon-types-list-loader";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +25,14 @@ const router = createBrowserRouter([
         path: "/:id",
         element: <PokeTrainerDetail />,
       },
+      {
+        path: "/:id/battle/:enemyId?",
+        element: <Battle />,
+        loader: async () => ({
+          trainers: await getPokeTrainers(),
+          types: await pokemonTypesListLoader(),
+        }),
+      },
     ],
   },
 ]);
@@ -29,5 +40,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </StrictMode>
 );
