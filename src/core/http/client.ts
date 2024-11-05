@@ -1,15 +1,17 @@
+import { toast } from "sonner";
+
 type FetchOptions = RequestInit;
 
 async function httpClient<T>(
   url: string,
-  options: FetchOptions = {},
+  options: FetchOptions = {}
 ): Promise<T> {
   try {
     const response = await fetch(url, options);
 
     if (!response.ok)
-      throw new Error(
-        `HTTP error! status: ${response.status}, statusText: ${response.statusText}`,
+      toast(
+        `HTTP error! status: ${response.status}, statusText: ${response.statusText}`
       );
 
     const contentType = response.headers.get("content-type");
@@ -19,10 +21,10 @@ async function httpClient<T>(
 
       return data;
     } else {
-      throw new Error(`Unexpected content type: ${contentType}`);
+      throw toast(`Unexpected content type: ${contentType}`);
     }
-  } catch (error) {
-    throw error;
+  } catch {
+    throw toast("Error fetching data");
   }
 }
 

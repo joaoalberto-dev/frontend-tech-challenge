@@ -2,6 +2,7 @@ import { randonBetween } from "@/core/utils/random-between";
 import { usePokemonList } from "@/features/pokemon/hooks/use-pokemon-list";
 import { fetchMultiplePokemons } from "../data/fetch-multiple-pokemons";
 import { Pokemon } from "@/core/services/pokemon-api.types";
+import { toast } from "sonner";
 
 type PokemonPair = [string, Pokemon];
 
@@ -28,7 +29,7 @@ function useRandomPokemons() {
         (pokemon): PokemonPair => [pokemon.name, pokemon]
       );
     } catch {
-      throw new Error("Failed to fetch Pokemon details");
+      throw toast("Failed to fetch Pokemon details");
     }
   }
 

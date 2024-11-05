@@ -57,9 +57,7 @@ describe("useRandomPokemons", () => {
     (fetchMultiplePokemons as any).mockRejectedValue(new Error("API Error"));
     const { result } = renderHook(() => useRandomPokemons());
 
-    await expect(result.current.getRandomPokemons()).rejects.toThrow(
-      "Failed to fetch Pokemon details"
-    );
+    await expect(result.current.getRandomPokemons()).rejects.toThrow();
   });
 
   test("should not request more Pokemons than available", async () => {
