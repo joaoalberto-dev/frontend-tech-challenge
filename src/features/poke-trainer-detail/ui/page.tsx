@@ -50,7 +50,7 @@ function PokeTrainerDetail() {
               <List
                 items={favorites}
                 containerClassName="lg:grid-cols-3 xl:grid-cols-6"
-                renderItem={([_, pokemon]) => (
+                renderItem={([, pokemon]) => (
                   <FavoritePokemonCard
                     key={pokemon.id}
                     pokemon={pokemon}

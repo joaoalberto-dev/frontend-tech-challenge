@@ -44,7 +44,7 @@ function TrainerBattle({
         <List
           items={favorites}
           containerClassName="mt-[120px] lg:mt-[220px] !flex flex-col flex-1 gap-4 justify-center items-center"
-          renderItem={([_, pokemon]) => {
+          renderItem={([, pokemon]) => {
             const bg =
               pokemon.sprites.front_default ||
               pokemon.sprites.other["official-artwork"].front_default ||

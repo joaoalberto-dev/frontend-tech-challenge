@@ -27,7 +27,7 @@ function useRandomPokemons() {
       return pokemonsData.map(
         (pokemon): PokemonPair => [pokemon.name, pokemon]
       );
-    } catch (error) {
+    } catch {
       throw new Error("Failed to fetch Pokemon details");
     }
   }

@@ -7,7 +7,7 @@ import {
 
 async function pokemonTypesListLoader() {
   try {
-    let pokemonTypesList: PokemonType[] = JSON.parse(
+    const pokemonTypesList: PokemonType[] = JSON.parse(
       window.localStorage.getItem("POKEMON_TYPES_LIST") ?? "[]"
     );
 

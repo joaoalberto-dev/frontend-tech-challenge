@@ -34,8 +34,8 @@ function useBattleManager() {
   function startBattle(myId?: string, enemyId?: string) {
     if (!myId || !enemyId || !types.length) return;
 
-    const myTeam = list(myId).map(([_, pokemon]) => pokemon);
-    const enemyTeam = list(enemyId).map(([_, pokemon]) => pokemon);
+    const myTeam = list(myId).map(([, pokemon]) => pokemon);
+    const enemyTeam = list(enemyId).map(([, pokemon]) => pokemon);
 
     setBattleResult(teamBattle(myTeam, enemyTeam, types));
   }
