@@ -1,11 +1,12 @@
 import { Pokemon } from "@/core/services/pokemon-api.types";
-import { create } from "zustand";
+import { create, useStore } from "zustand";
 
 type FavoritePokemonStore = {
   favoritePokemons: Record<string, Map<string, Pokemon>>;
   add: (trainerId: string, pokemon: Pokemon) => void;
   remove: (trainerId: string, pokemon: Pokemon) => void;
-  list: (trainerId: string) => [string, Pokemon][];
+  replace: (trainerId: string, pokemons: [string, Pokemon][]) => void;
+  list: (trainerId?: string) => [string, Pokemon][];
   canAdd: (trainerId: string) => boolean;
 };
 
@@ -37,7 +38,16 @@ const useFavoritePokemon = create<FavoritePokemonStore>((set, get) => ({
       return favoritePokemons;
     });
   },
+  replace(trainerId, pokemons) {
+    set(({ favoritePokemons }) => {
+      favoritePokemons[trainerId] = new Map(pokemons);
+
+      return favoritePokemons;
+    });
+  },
   list(trainerId) {
+    if (!trainerId) return [];
+
     const trainer = get().favoritePokemons[trainerId] || new Map();
     const items = Array.from(trainer);
 
