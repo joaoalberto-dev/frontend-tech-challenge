@@ -6,6 +6,15 @@ import { configDefaults } from "vitest/config";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
+const exclude = [
+  ...configDefaults.exclude,
+  "./**/*.config.*",
+  "./**/*.d.ts",
+  "./**/*.types.ts",
+  "./**/*.test.ts",
+  "./**/*.test.tsx",
+];
+
 export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
@@ -14,12 +23,7 @@ export default defineConfig({
     setupFiles: ["vitest.setup.ts"],
     include: ["**/?(*.)test.ts?(x)"],
     coverage: {
-      exclude: [
-        ...configDefaults.exclude,
-        "./**/*.config.*",
-        "./**/*.d.ts",
-        "./**/*.types.ts",
-      ],
+      exclude,
     },
   },
 });
