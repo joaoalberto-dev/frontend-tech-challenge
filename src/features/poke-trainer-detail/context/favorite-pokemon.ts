@@ -1,5 +1,5 @@
 import { Pokemon } from "@/core/services/pokemon-api.types";
-import { create, useStore } from "zustand";
+import { create } from "zustand";
 
 type FavoritePokemonStore = {
   favoritePokemons: Record<string, Map<string, Pokemon>>;
