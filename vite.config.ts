@@ -2,9 +2,9 @@
 /// <reference types="vite/client" />
 
 import react from "@vitejs/plugin-react-swc";
-import { configDefaults } from "vitest/config";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { configDefaults } from "vitest/config";
 
 const exclude = [
   ...configDefaults.exclude,
@@ -25,5 +25,8 @@ export default defineConfig({
     coverage: {
       exclude,
     },
+  },
+  server: {
+    host: "127.0.0.1",
   },
 });
