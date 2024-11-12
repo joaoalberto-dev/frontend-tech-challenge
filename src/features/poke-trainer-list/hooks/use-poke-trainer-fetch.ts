@@ -1,4 +1,4 @@
-import { RickAndMortyResponse } from "@/core/services/rick-and-morty.types";
+import { RickAndMortyResponse } from "@/features/trainer/services/rick-and-morty.types";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { getPokeTrainers } from "../data/get-poke-trainers";
 

@@ -3,8 +3,8 @@ import { Center } from "@/core/components/center";
 import { List } from "@/core/components/list";
 import { PokeTrainerHeader } from "@/core/components/poke-trainer-header";
 import { PokemonTypeImage } from "@/core/components/pokemon-type";
-import { RickAndMortyCharacter } from "@/core/services/rick-and-morty.types";
 import { Pokemon } from "@/features/pokemon/services/pokemon-api.types";
+import { RickAndMortyCharacter } from "@/features/trainer/services/rick-and-morty.types";
 import { Shuffle } from "lucide-react";
 
 type TrainerBattleProps = {

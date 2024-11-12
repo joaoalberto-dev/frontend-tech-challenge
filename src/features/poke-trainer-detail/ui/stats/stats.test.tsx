@@ -1,4 +1,4 @@
-import { RickAndMortyCharacter } from "@/core/services/rick-and-morty.types";
+import { RickAndMortyCharacter } from "@/features/trainer/services/rick-and-morty.types";
 import { render } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { PokeTrainerStats } from "./stats";

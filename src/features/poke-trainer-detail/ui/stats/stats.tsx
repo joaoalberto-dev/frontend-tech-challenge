@@ -1,4 +1,4 @@
-import { RickAndMortyCharacter } from "@/core/services/rick-and-morty.types";
+import { RickAndMortyCharacter } from "@/features/trainer/services/rick-and-morty.types";
 
 type PokeTrainerStatsProps = {
   trainer: RickAndMortyCharacter;

@@ -1,7 +1,7 @@
 import {
   RickAndMortyCharacter,
   RickAndMortyResponse,
-} from "@/core/services/rick-and-morty.types";
+} from "@/features/trainer/services/rick-and-morty.types";
 import { InfiniteData } from "@tanstack/react-query";
 import { useMemo } from "react";
 

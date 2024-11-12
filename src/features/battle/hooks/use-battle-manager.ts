@@ -1,7 +1,7 @@
-import { RickAndMortyResponse } from "@/core/services/rick-and-morty.types";
 import { randonBetween } from "@/core/utils/random-between";
 import { useFavoritePokemon } from "@/features/poke-trainer-detail/context/favorite-pokemon";
 import { PokemonType } from "@/features/pokemon/services/pokemon-api.types";
+import { RickAndMortyResponse } from "@/features/trainer/services/rick-and-morty.types";
 import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { BattleResult } from "../types";

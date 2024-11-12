@@ -1,5 +1,5 @@
-import { rickAndMortyApi } from "@/core/services/rick-and-morty";
-import { RickAndMortyCharacter } from "@/core/services/rick-and-morty.types";
+import { rickAndMortyApi } from "@/features/trainer/services/rick-and-morty";
+import { RickAndMortyCharacter } from "@/features/trainer/services/rick-and-morty.types";
 
 async function getPokeTrainerDetail(
   id: string

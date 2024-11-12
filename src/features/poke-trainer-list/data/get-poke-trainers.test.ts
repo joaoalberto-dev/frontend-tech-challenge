@@ -1,9 +1,9 @@
-import { rickAndMortyApi } from "@/core/services/rick-and-morty";
-import { RickAndMortyResponse } from "@/core/services/rick-and-morty.types";
+import { rickAndMortyApi } from "@/features/trainer/services/rick-and-morty";
+import { RickAndMortyResponse } from "@/features/trainer/services/rick-and-morty.types";
 import { describe, expect, Mock, test, vi } from "vitest";
 import { getPokeTrainers } from "./get-poke-trainers";
 
-vi.mock("@/core/services/rick-and-morty", () => ({
+vi.mock("@/features/trainer/services/rick-and-morty", () => ({
   rickAndMortyApi: {
     get: vi.fn(),
   },

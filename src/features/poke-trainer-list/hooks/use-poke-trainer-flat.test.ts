@@ -1,4 +1,4 @@
-import { RickAndMortyResponse } from "@/core/services/rick-and-morty.types";
+import { RickAndMortyResponse } from "@/features/trainer/services/rick-and-morty.types";
 import { InfiniteData } from "@tanstack/react-query";
 import { renderHook } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
