@@ -1,5 +1,5 @@
+import { describe, expect, test } from "vitest";
 import { buildQueryParams } from "./build-query-params";
-import { describe, test, expect } from "vitest";
 
 describe("buildQueryParams", () => {
   test("should build query string from valid params", () => {

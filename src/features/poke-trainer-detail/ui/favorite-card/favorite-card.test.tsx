@@ -1,9 +1,9 @@
-import { fireEvent } from "@testing-library/react";
-import { FavoritePokemonCard } from "./favorite-card";
-import { useFavoritePokemon } from "../../context/favorite-pokemon";
-import { describe, test, vi, expect, beforeEach, Mock } from "vitest";
 import { Pokemon } from "@/core/services/pokemon-api.types";
 import { render } from "@/core/test-utils";
+import { fireEvent } from "@testing-library/react";
+import { beforeEach, describe, expect, Mock, test, vi } from "vitest";
+import { useFavoritePokemon } from "../../context/favorite-pokemon";
+import { FavoritePokemonCard } from "./favorite-card";
 
 vi.mock("../../context/favorite-pokemon", () => ({
   useFavoritePokemon: vi.fn(),

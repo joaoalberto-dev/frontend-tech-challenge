@@ -1,6 +1,6 @@
 import { render } from "@/core/test-utils";
-import { PokeTrainerHeader } from "./poke-trainer-header";
 import { describe, expect, test } from "vitest";
+import { PokeTrainerHeader } from "./poke-trainer-header";
 
 describe("PokeTrainerHeader", () => {
   const defaultProps = {

@@ -3,9 +3,9 @@ import { EmptyState } from "@/core/components/empty-state";
 import { List } from "@/core/components/list";
 import { Search } from "@/core/components/search";
 import { usePokeTrainerFetch } from "../hooks/use-poke-trainer-fetch";
+import { useFlatPokeTrainers } from "../hooks/use-poke-trainer-flat";
 import { usePokeTrainerSearch } from "../hooks/use-poke-trainer-search";
 import { LoadMore } from "./load-more/load-more";
-import { useFlatPokeTrainers } from "../hooks/use-poke-trainer-flat";
 
 function PokeTrainerListPage() {
   const { name, handleChange } = usePokeTrainerSearch();
@@ -15,7 +15,7 @@ function PokeTrainerListPage() {
   return (
     <div>
       <header className="flex flex-col md:flex-row md:justify-between md:items-center items-center justify-center p-5 md:p-10 max-w-full xl:max-w-[1920px] mx-auto">
-        <h1 className="text-3xl md:text-5xl w-full md:w-auto">
+        <h1 className="w-full text-3xl md:text-5xl md:w-auto">
           Pick your champion
         </h1>
         <Search

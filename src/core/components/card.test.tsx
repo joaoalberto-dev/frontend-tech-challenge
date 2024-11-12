@@ -1,6 +1,6 @@
-import { describe, test, expect, vi } from "vitest";
-import { render, fireEvent } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
+import { describe, expect, test, vi } from "vitest";
 import { Card } from "./card";
 
 const CardWrapper = ({ children }: { children: React.ReactNode }) => (
@@ -19,7 +19,7 @@ describe("Card", () => {
       <Card {...defaultProps} kind="link" link="/test-link" />,
       {
         wrapper: CardWrapper,
-      },
+      }
     );
 
     expect(screen.getByText("Test Card")).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe("Card", () => {
       <Card {...defaultProps} kind="button" onClick={handleClick} />,
       {
         wrapper: CardWrapper,
-      },
+      }
     );
 
     expect(screen.getByText("Test Card")).toBeInTheDocument();
@@ -48,7 +48,7 @@ describe("Card", () => {
       <Card {...defaultProps} kind="button" onClick={handleClick} />,
       {
         wrapper: CardWrapper,
-      },
+      }
     );
 
     fireEvent.click(screen.getByRole("link"));
@@ -62,7 +62,7 @@ describe("Card", () => {
       <Card {...defaultProps} kind="link" link="/test-link" />,
       {
         wrapper: CardWrapper,
-      },
+      }
     );
 
     fireEvent.click(screen.getByRole("link"));

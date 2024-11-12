@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
+import { describe, expect, test } from "vitest";
 import { ScoreResult } from "./score-result";
-import { describe, test, expect } from "vitest";
 
 describe("ScoreResult", () => {
   test("should render score", () => {

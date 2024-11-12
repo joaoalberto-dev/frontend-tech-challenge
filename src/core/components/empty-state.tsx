@@ -7,7 +7,7 @@ type EmptyStateProps = {
 function EmptyState({ text }: EmptyStateProps) {
   return (
     <div
-      className="w-full flex gap-2 bg-neutral-100 p-10 items-center justify-center rounded-md"
+      className="flex items-center justify-center w-full gap-2 p-10 rounded-md bg-neutral-100"
       role="alert"
     >
       <CircleAlert className="text-neutral-300" /> {text && <p>{text}</p>}

@@ -1,5 +1,5 @@
-import { httpClient, createHttpClient } from "./client";
-import { vi, describe, beforeEach, expect, MockedFunction, test } from "vitest";
+import { beforeEach, describe, expect, MockedFunction, test, vi } from "vitest";
+import { createHttpClient, httpClient } from "./client";
 
 // @ts-expect-error
 global.fetch = vi.fn();

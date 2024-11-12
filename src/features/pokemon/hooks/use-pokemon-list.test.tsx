@@ -1,8 +1,8 @@
-import { describe, test, expect, vi, beforeEach } from "vitest";
-import { renderHook, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { usePokemonList } from "./use-pokemon-list";
+import { renderHook, waitFor } from "@testing-library/react";
+import { beforeEach, describe, expect, test, vi } from "vitest";
 import { pokemonListLoader } from "../data/pokemon-list-loader";
+import { usePokemonList } from "./use-pokemon-list";
 
 vi.mock("../data/pokemon-list-loader", () => ({
   pokemonListLoader: vi.fn(),

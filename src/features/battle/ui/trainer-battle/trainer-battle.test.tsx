@@ -1,6 +1,6 @@
-import { render, fireEvent } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
+import { describe, expect, test, vi } from "vitest";
 import { TrainerBattle } from "./trainer-battle";
-import { describe, test, expect, vi } from "vitest";
 
 describe("TrainerBattle", () => {
   test("should render random trainer button when no profile is provided", () => {

@@ -1,8 +1,8 @@
+import { rickAndMortyApi } from "@/core/services/rick-and-morty";
 import {
   RickAndMortyFilterParams,
   RickAndMortyResponse,
 } from "@/core/services/rick-and-morty.types";
-import { rickAndMortyApi } from "@/core/services/rick-and-morty";
 import { buildQueryParams } from "@/core/utils/build-query-params";
 
 async function getPokeTrainers(

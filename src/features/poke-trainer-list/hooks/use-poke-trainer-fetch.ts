@@ -1,5 +1,5 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
 import { RickAndMortyResponse } from "@/core/services/rick-and-morty.types";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { getPokeTrainers } from "../data/get-poke-trainers";
 
 function usePokeTrainerFetch(name: string) {

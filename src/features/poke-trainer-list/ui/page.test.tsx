@@ -1,10 +1,10 @@
+import { render, screen } from "@/core/test-utils";
 import { fireEvent } from "@testing-library/react";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 import { usePokeTrainerFetch } from "../hooks/use-poke-trainer-fetch";
 import { useFlatPokeTrainers } from "../hooks/use-poke-trainer-flat";
 import { usePokeTrainerSearch } from "../hooks/use-poke-trainer-search";
 import { PokeTrainerListPage } from "./page";
-import { render, screen } from "@/core/test-utils";
 
 vi.mock("../hooks/use-poke-trainer-fetch");
 vi.mock("../hooks/use-poke-trainer-search");

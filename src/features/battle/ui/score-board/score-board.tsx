@@ -17,7 +17,7 @@ function ScoreBoard({
   canBattle,
 }: ScoreBoardProps) {
   return (
-    <div className="fixed bottom-0 lg:relative flex items-center justify-center">
+    <div className="fixed bottom-0 flex items-center justify-center lg:relative">
       {battleResult && (
         <ScoreResult
           winner={battleResult.myTeamScore > battleResult.enemyTeamScore}

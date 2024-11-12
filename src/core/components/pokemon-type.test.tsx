@@ -1,5 +1,5 @@
-import { describe, test, expect } from "vitest";
 import { render } from "@testing-library/react";
+import { describe, expect, test } from "vitest";
 import { PokemonTypeImage, pokemonTypes } from "./pokemon-type";
 
 describe("PokemonTypeImage", () => {

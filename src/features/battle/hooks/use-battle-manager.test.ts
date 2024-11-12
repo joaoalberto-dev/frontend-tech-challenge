@@ -1,5 +1,5 @@
-import { describe, test, expect, vi, beforeEach } from "vitest";
-import { renderHook, act } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
+import { beforeEach, describe, expect, test, vi } from "vitest";
 import { useBattleManager } from "./use-battle-manager";
 
 vi.mock("@/features/poke-trainer-detail/context/favorite-pokemon", () => ({

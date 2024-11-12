@@ -1,11 +1,11 @@
+import { Button } from "@/core/components/button";
+import { Center } from "@/core/components/center";
+import { List } from "@/core/components/list";
 import { PokeTrainerHeader } from "@/core/components/poke-trainer-header";
 import { PokemonTypeImage } from "@/core/components/pokemon-type";
 import { Pokemon } from "@/core/services/pokemon-api.types";
 import { RickAndMortyCharacter } from "@/core/services/rick-and-morty.types";
 import { Shuffle } from "lucide-react";
-import { Center } from "@/core/components/center";
-import { Button } from "@/core/components/button";
-import { List } from "@/core/components/list";
 
 type TrainerBattleProps = {
   profile?: RickAndMortyCharacter;
@@ -31,7 +31,7 @@ function TrainerBattle({
     );
 
   return (
-    <div className="flex flex-col gap-4 h-full">
+    <div className="flex flex-col h-full gap-4">
       <PokeTrainerHeader name={profile.name} image={profile.image} />
       {!favorites || !favorites.length ? (
         <Center>
@@ -68,7 +68,7 @@ function TrainerBattle({
                   ))}
                 </div>
 
-                <p className="text-xs font-bold p-1 rounded-md bg-white/90">
+                <p className="p-1 text-xs font-bold rounded-md bg-white/90">
                   {pokemon.name}
                 </p>
               </div>

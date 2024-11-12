@@ -1,12 +1,12 @@
-import { useFavoritePokemon } from "@/features/poke-trainer-detail/context/favorite-pokemon";
-import { useRandomPokemons } from "./use-random-pokemons";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { PokemonType } from "@/core/services/pokemon-api.types";
 import { RickAndMortyResponse } from "@/core/services/rick-and-morty.types";
 import { randonBetween } from "@/core/utils/random-between";
-import { teamBattle } from "../utils/battle";
-import { PokemonType } from "@/core/services/pokemon-api.types";
+import { useFavoritePokemon } from "@/features/poke-trainer-detail/context/favorite-pokemon";
 import { useState } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { BattleResult } from "../types";
+import { teamBattle } from "../utils/battle";
+import { useRandomPokemons } from "./use-random-pokemons";
 
 function useBattleManager() {
   const [battleResult, setBattleResult] = useState<BattleResult>(null);

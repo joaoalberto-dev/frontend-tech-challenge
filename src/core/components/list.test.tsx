@@ -1,5 +1,5 @@
-import { describe, test, expect } from "vitest";
 import { render } from "@testing-library/react";
+import { describe, expect, test } from "vitest";
 import { List } from "./list";
 
 describe("List", () => {
@@ -38,12 +38,12 @@ describe("List", () => {
     );
 
     const screen = render(
-      <List<TestItem> items={testItems} renderItem={renderItem} />,
+      <List<TestItem> items={testItems} renderItem={renderItem} />
     );
 
     testItems.forEach((item) => {
       expect(screen.getByTestId(`item-${item.id}`)).toHaveTextContent(
-        item.name,
+        item.name
       );
     });
   });

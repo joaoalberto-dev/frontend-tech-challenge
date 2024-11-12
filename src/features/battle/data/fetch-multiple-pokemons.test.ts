@@ -1,5 +1,5 @@
-import { describe, test, expect, vi, MockedFunction, beforeEach } from "vitest";
 import { httpClient } from "@/core/http/client";
+import { MockedFunction, beforeEach, describe, expect, test, vi } from "vitest";
 import { fetchMultiplePokemons } from "./fetch-multiple-pokemons";
 
 vi.mock("@/core/http/client", () => ({

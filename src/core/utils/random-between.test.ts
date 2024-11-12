@@ -1,4 +1,4 @@
-import { describe, test, expect } from "vitest";
+import { describe, expect, test } from "vitest";
 import { randonBetween } from "./random-between";
 
 describe("randonBetween", () => {

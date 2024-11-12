@@ -1,6 +1,6 @@
-import { describe, it, expect, vi, Mock } from "vitest";
-import { renderHook } from "@testing-library/react";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import { renderHook } from "@testing-library/react";
+import { describe, expect, it, Mock, vi } from "vitest";
 import { usePokeTrainerFetch } from "./use-poke-trainer-fetch";
 
 vi.mock("@tanstack/react-query", () => ({

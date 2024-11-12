@@ -8,9 +8,9 @@ function PokeTrainerHeader({ image, name }: PokeTrainerHeaderProps) {
     <header className="w-full flex flex-col items-center justify-center h-[200px] lg:h-[300px] relative">
       <img
         src={image}
-        className="w-full h-full absolute inset-0 object-cover object-center blur-md"
+        className="absolute inset-0 object-cover object-center w-full h-full blur-md"
       />
-      <div className="top-1/2 flex items-center flex-col gap-4 relative">
+      <div className="relative flex flex-col items-center gap-4 top-1/2">
         <img
           src={image}
           alt={name}

@@ -1,8 +1,8 @@
 import { Card } from "@/core/components/card";
 import { Pokemon } from "@/core/services/pokemon-api.types";
-import { useFavoritePokemon } from "../../context/favorite-pokemon";
-import { StarOff } from "lucide-react";
 import { noop } from "@/core/utils/noop";
+import { StarOff } from "lucide-react";
+import { useFavoritePokemon } from "../../context/favorite-pokemon";
 
 type FavoritePokemonCardProps = {
   trainerId: string;
@@ -13,7 +13,7 @@ function FavoritePokemonCard({ pokemon, trainerId }: FavoritePokemonCardProps) {
   const { remove } = useFavoritePokemon();
 
   return (
-    <div className="relative group w-full aspect-square">
+    <div className="relative w-full group aspect-square">
       <Card
         kind="button"
         id={pokemon.id}
@@ -26,7 +26,7 @@ function FavoritePokemonCard({ pokemon, trainerId }: FavoritePokemonCardProps) {
         onClick={noop}
       />
       <button
-        className="w-8 rounded-md h-8 items-center justify-center bg-neutral-100 absolute hidden right-2 top-2 group-hover:flex"
+        className="absolute items-center justify-center hidden w-8 h-8 rounded-md bg-neutral-100 right-2 top-2 group-hover:flex"
         onClick={() => remove(trainerId, pokemon)}
       >
         <StarOff className="w-4 h-4" />

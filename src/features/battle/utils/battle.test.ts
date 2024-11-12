@@ -1,6 +1,6 @@
-import { describe, test, expect } from "vitest";
-import { teamBattle } from "./battle";
 import type { Pokemon, PokemonType } from "@/core/services/pokemon-api.types";
+import { describe, expect, test } from "vitest";
+import { teamBattle } from "./battle";
 
 describe("Battle Utils", () => {
   const mockTypes: PokemonType[] = [

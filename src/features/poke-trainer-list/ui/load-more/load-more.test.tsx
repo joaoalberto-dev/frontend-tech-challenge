@@ -1,5 +1,5 @@
-import { render, fireEvent } from "@testing-library/react";
-import { describe, test, expect, vi } from "vitest";
+import { fireEvent, render } from "@testing-library/react";
+import { describe, expect, test, vi } from "vitest";
 import { LoadMore } from "./load-more";
 
 describe("LoadMore", () => {

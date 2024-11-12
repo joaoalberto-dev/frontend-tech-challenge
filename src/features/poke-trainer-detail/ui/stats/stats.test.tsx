@@ -1,7 +1,7 @@
-import { render } from "@testing-library/react";
-import { PokeTrainerStats } from "./stats";
 import { RickAndMortyCharacter } from "@/core/services/rick-and-morty.types";
+import { render } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
+import { PokeTrainerStats } from "./stats";
 
 const mockTrainer = {
   name: "Rick Sanchez",

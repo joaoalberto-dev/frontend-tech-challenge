@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { render, within, RenderOptions } from "@testing-library/react";
+import { render, RenderOptions, within } from "@testing-library/react";
 import { ReactElement } from "react";
 import { MemoryRouter } from "react-router-dom";
 
@@ -23,7 +23,7 @@ const customRender = (
 
 export * from "@testing-library/react";
 export {
+  customRender as render,
   customScreen as screen,
   customWithin as within,
-  customRender as render,
 };

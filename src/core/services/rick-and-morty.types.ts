@@ -44,8 +44,8 @@ type RickAndMortyResponse = {
 };
 
 export type {
-  RickAndMortyPaginationInfo,
   RickAndMortyCharacter,
-  RickAndMortyResponse,
   RickAndMortyFilterParams,
+  RickAndMortyPaginationInfo,
+  RickAndMortyResponse,
 };

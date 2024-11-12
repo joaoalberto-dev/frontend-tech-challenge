@@ -1,5 +1,5 @@
-import { describe, test, expect } from "vitest";
 import { render } from "@testing-library/react";
+import { describe, expect, test } from "vitest";
 import { EmptyState } from "./empty-state";
 
 describe("EmptyState", () => {

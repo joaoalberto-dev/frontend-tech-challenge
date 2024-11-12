@@ -1,6 +1,6 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test, vi } from "vitest";
 import { ScoreBoard } from "./score-board";
-import { describe, test, expect, vi } from "vitest";
 
 describe("ScoreBoard", () => {
   const mockStartBattle = vi.fn();

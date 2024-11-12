@@ -1,8 +1,8 @@
-import { describe, test, expect } from "vitest";
-import { renderHook } from "@testing-library/react";
-import { useFlatPokeTrainers } from "./use-poke-trainer-flat";
-import { InfiniteData } from "@tanstack/react-query";
 import { RickAndMortyResponse } from "@/core/services/rick-and-morty.types";
+import { InfiniteData } from "@tanstack/react-query";
+import { renderHook } from "@testing-library/react";
+import { describe, expect, test } from "vitest";
+import { useFlatPokeTrainers } from "./use-poke-trainer-flat";
 
 describe("useFlatPokeTrainers", () => {
   test("should return empty array when data is undefined", () => {

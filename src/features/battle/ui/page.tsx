@@ -1,10 +1,10 @@
 import { useFavoritePokemon } from "@/features/poke-trainer-detail/context/favorite-pokemon";
 import { usePokeTrainerProfile } from "@/features/poke-trainer-detail/hooks/use-poke-trainer-profile";
 import { useParams } from "react-router-dom";
-import { BattleField } from "./battle-field/battle-field";
-import { TrainerBattle } from "./trainer-battle/trainer-battle";
 import { useBattleManager } from "../hooks/use-battle-manager";
+import { BattleField } from "./battle-field/battle-field";
 import { ScoreBoard } from "./score-board/score-board";
+import { TrainerBattle } from "./trainer-battle/trainer-battle";
 
 type PageParams = {
   id: string;

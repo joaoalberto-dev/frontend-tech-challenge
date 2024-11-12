@@ -9,11 +9,11 @@ type BattleFieldProps = {
 function BattleField({ left, center, right }: BattleFieldProps) {
   return (
     <div className="flex min-h-screen pb-[100px]">
-      <div className="min-h-screen w-1/2 relative flex-auto lg:flex-1">
+      <div className="relative flex-auto w-1/2 min-h-screen lg:flex-1">
         {left}
       </div>
       <Divider>{center}</Divider>
-      <div className="min-h-screen w-1/2 relative flex-auto lg:flex-1">
+      <div className="relative flex-auto w-1/2 min-h-screen lg:flex-1">
         {right}
       </div>
     </div>

@@ -48,7 +48,7 @@ function PokeTrainerDetail() {
           {!favorites.length ? (
             <EmptyState text="No favorites found" />
           ) : (
-            <div className="flex p-4 bg-sky-100 rounded-md flex-col gap-2 w-full">
+            <div className="flex flex-col w-full gap-2 p-4 rounded-md bg-sky-100">
               <List
                 items={favorites}
                 containerClassName="lg:grid-cols-3 xl:grid-cols-6"

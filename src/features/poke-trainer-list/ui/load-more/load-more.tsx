@@ -9,7 +9,7 @@ type LoadMoreProps = {
 
 function LoadMore({ loadMore, disabled, isLoadingMore }: LoadMoreProps) {
   return (
-    <div className="w-full mt-10 flex items-center justify-center">
+    <div className="flex items-center justify-center w-full mt-10">
       <Button onClick={loadMore} disabled={disabled}>
         {isLoadingMore && <LoaderIcon className="animate-spin" />} Load more
       </Button>

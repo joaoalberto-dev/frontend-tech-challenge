@@ -320,13 +320,13 @@ type PokemonType = {
 };
 
 export type {
+  DamageRelations,
   Pokemon,
   PokemonIndexList,
-  ResourceIndex,
   PokemonIndexListResponse,
-  PokemonTypes,
   PokemonType,
-  DamageRelations,
-  TypeRelation,
   PokemonTypeListResponse,
+  PokemonTypes,
+  ResourceIndex,
+  TypeRelation,
 };

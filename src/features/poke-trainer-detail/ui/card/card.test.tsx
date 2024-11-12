@@ -1,9 +1,9 @@
-import { describe, test, expect, vi, beforeEach } from "vitest";
-import { render, screen } from "@testing-library/react";
-import { PokemonCard } from "./card";
 import { useQuery } from "@tanstack/react-query";
+import { render, screen } from "@testing-library/react";
 import { useParams } from "react-router-dom";
+import { beforeEach, describe, expect, test, vi } from "vitest";
 import { useFavoritePokemon } from "../../context/favorite-pokemon";
+import { PokemonCard } from "./card";
 
 // Mock the dependencies
 vi.mock("@tanstack/react-query");

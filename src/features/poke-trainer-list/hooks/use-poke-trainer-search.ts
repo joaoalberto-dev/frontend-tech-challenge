@@ -1,6 +1,6 @@
+import { useDebounceCallback } from "@/core/hooks/use-debounce-callback";
 import { ChangeEvent } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useDebounceCallback } from "@/core/hooks/use-debounce-callback";
 
 function usePokeTrainerSearch() {
   const [searchParams, setSearchParams] = useSearchParams();

@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
 import { renderHook } from "@testing-library/react";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { useDebounceCallback } from "./use-debounce-callback";
 
 describe("useDebounceCallback", () => {
@@ -52,7 +52,7 @@ describe("useDebounceCallback", () => {
   it("should preserve the callback arguments", () => {
     const callback = vi.fn();
     const { result } = renderHook(() =>
-      useDebounceCallback((a: number, b: string) => callback(a, b)),
+      useDebounceCallback((a: number, b: string) => callback(a, b))
     );
 
     result.current(42, "test");

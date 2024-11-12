@@ -1,8 +1,8 @@
-import { describe, test, expect, vi, beforeEach } from "vitest";
-import { renderHook } from "@testing-library/react";
-import { useRandomPokemons } from "./use-random-pokemons";
 import { usePokemonList } from "@/features/pokemon/hooks/use-pokemon-list";
+import { renderHook } from "@testing-library/react";
+import { beforeEach, describe, expect, test, vi } from "vitest";
 import { fetchMultiplePokemons } from "../data/fetch-multiple-pokemons";
+import { useRandomPokemons } from "./use-random-pokemons";
 
 vi.mock("@/features/pokemon/hooks/use-pokemon-list");
 vi.mock("../data/fetch-multiple-pokemons");

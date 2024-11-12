@@ -6,18 +6,22 @@ import fairy from "@/assets/pokemon-types/fairy.svg";
 import fighting from "@/assets/pokemon-types/fighting.svg";
 import fire from "@/assets/pokemon-types/fire.svg";
 import flying from "@/assets/pokemon-types/flying.svg";
-import ghost from "@/assets/pokemon-types/ghost.svg";
+import {
+  default as ghost,
+  default as shadow,
+} from "@/assets/pokemon-types/ghost.svg";
 import grass from "@/assets/pokemon-types/grass.svg";
 import ground from "@/assets/pokemon-types/ground.svg";
 import ice from "@/assets/pokemon-types/ice.svg";
-import normal from "@/assets/pokemon-types/normal.svg";
+import {
+  default as normal,
+  default as stellar,
+  default as unknown,
+} from "@/assets/pokemon-types/normal.svg";
 import poison from "@/assets/pokemon-types/poison.svg";
 import psychic from "@/assets/pokemon-types/psychic.svg";
 import rock from "@/assets/pokemon-types/rock.svg";
-import shadow from "@/assets/pokemon-types/ghost.svg";
 import steel from "@/assets/pokemon-types/steel.svg";
-import stellar from "@/assets/pokemon-types/normal.svg";
-import unknown from "@/assets/pokemon-types/normal.svg";
 import water from "@/assets/pokemon-types/water.svg";
 import { PokemonTypes } from "@/core/services/pokemon-api.types";
 

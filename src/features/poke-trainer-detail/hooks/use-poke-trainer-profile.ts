@@ -1,6 +1,6 @@
+import { RickAndMortyCharacter } from "@/core/services/rick-and-morty.types";
 import { useQuery } from "@tanstack/react-query";
 import { getPokeTrainerDetail } from "../data/get-poke-trainer-detail";
-import { RickAndMortyCharacter } from "@/core/services/rick-and-morty.types";
 
 function usePokeTrainerProfile(id?: string) {
   const query = useQuery<RickAndMortyCharacter>({

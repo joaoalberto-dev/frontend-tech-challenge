@@ -1,5 +1,5 @@
-import { describe, test, expect, vi, afterEach } from "vitest";
 import { rickAndMortyApi } from "@/core/services/rick-and-morty";
+import { afterEach, describe, expect, test, vi } from "vitest";
 import { getPokeTrainerDetail } from "./get-poke-trainer-detail";
 
 vi.mock("@/core/services/rick-and-morty", () => ({

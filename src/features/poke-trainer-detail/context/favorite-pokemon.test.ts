@@ -1,6 +1,6 @@
-import { describe, test, expect, beforeEach } from "vitest";
-import { useFavoritePokemon } from "./favorite-pokemon";
 import { Pokemon } from "@/core/services/pokemon-api.types";
+import { beforeEach, describe, expect, test } from "vitest";
+import { useFavoritePokemon } from "./favorite-pokemon";
 
 describe("useFavoritePokemon", () => {
   // @ts-expect-error

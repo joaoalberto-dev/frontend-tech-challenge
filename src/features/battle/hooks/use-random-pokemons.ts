@@ -1,8 +1,8 @@
+import { Pokemon } from "@/core/services/pokemon-api.types";
 import { randonBetween } from "@/core/utils/random-between";
 import { usePokemonList } from "@/features/pokemon/hooks/use-pokemon-list";
-import { fetchMultiplePokemons } from "../data/fetch-multiple-pokemons";
-import { Pokemon } from "@/core/services/pokemon-api.types";
 import { toast } from "sonner";
+import { fetchMultiplePokemons } from "../data/fetch-multiple-pokemons";
 
 type PokemonPair = [string, Pokemon];
 
