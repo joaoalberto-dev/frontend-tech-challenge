@@ -1,6 +1,6 @@
-import { Pokemon } from "@/core/services/pokemon-api.types";
 import { randonBetween } from "@/core/utils/random-between";
 import { usePokemonList } from "@/features/pokemon/hooks/use-pokemon-list";
+import { Pokemon } from "@/features/pokemon/services/pokemon-api.types";
 import { toast } from "sonner";
 import { fetchMultiplePokemons } from "../data/fetch-multiple-pokemons";
 

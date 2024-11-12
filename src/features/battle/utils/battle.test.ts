@@ -1,4 +1,7 @@
-import type { Pokemon, PokemonType } from "@/core/services/pokemon-api.types";
+import type {
+  Pokemon,
+  PokemonType,
+} from "@/features/pokemon/services/pokemon-api.types";
 import { describe, expect, test } from "vitest";
 import { teamBattle } from "./battle";
 

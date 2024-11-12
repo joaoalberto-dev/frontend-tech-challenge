@@ -1,5 +1,5 @@
-import { pokemonApi } from "@/core/services/pokemon-api";
-import { PokemonIndexListResponse } from "@/core/services/pokemon-api.types";
+import { pokemonApi } from "@/features/pokemon/services/pokemon-api";
+import { PokemonIndexListResponse } from "@/features/pokemon/services/pokemon-api.types";
 
 async function pokemonListLoader() {
   try {

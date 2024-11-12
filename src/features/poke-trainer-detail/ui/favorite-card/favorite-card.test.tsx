@@ -1,5 +1,5 @@
-import { Pokemon } from "@/core/services/pokemon-api.types";
 import { render } from "@/core/test-utils";
+import { Pokemon } from "@/features/pokemon/services/pokemon-api.types";
 import { fireEvent } from "@testing-library/react";
 import { beforeEach, describe, expect, Mock, test, vi } from "vitest";
 import { useFavoritePokemon } from "../../context/favorite-pokemon";

@@ -1,4 +1,7 @@
-import { Pokemon, PokemonType } from "@/core/services/pokemon-api.types";
+import {
+  Pokemon,
+  PokemonType,
+} from "@/features/pokemon/services/pokemon-api.types";
 
 function calculatePoints(
   pokemon1: Pokemon,

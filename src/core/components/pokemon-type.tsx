@@ -23,7 +23,7 @@ import psychic from "@/assets/pokemon-types/psychic.svg";
 import rock from "@/assets/pokemon-types/rock.svg";
 import steel from "@/assets/pokemon-types/steel.svg";
 import water from "@/assets/pokemon-types/water.svg";
-import { PokemonTypes } from "@/core/services/pokemon-api.types";
+import { PokemonTypes } from "@/features/pokemon/services/pokemon-api.types";
 
 const pokemonTypes: Record<PokemonTypes, string> = {
   bug,

@@ -1,9 +1,9 @@
 import { httpClient } from "@/core/http/client";
-import { pokemonApi } from "@/core/services/pokemon-api";
+import { pokemonApi } from "@/features/pokemon/services/pokemon-api";
 import {
   PokemonType,
   PokemonTypeListResponse,
-} from "@/core/services/pokemon-api.types";
+} from "@/features/pokemon/services/pokemon-api.types";
 
 async function pokemonTypesListLoader() {
   try {

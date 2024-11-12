@@ -1,4 +1,4 @@
-import { Pokemon } from "@/core/services/pokemon-api.types";
+import { Pokemon } from "@/features/pokemon/services/pokemon-api.types";
 import { create } from "zustand";
 
 type FavoritePokemonStore = {

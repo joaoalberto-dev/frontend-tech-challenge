@@ -1,9 +1,9 @@
 import { httpClient } from "@/core/http/client";
-import { pokemonApi } from "@/core/services/pokemon-api";
+import { pokemonApi } from "@/features/pokemon/services/pokemon-api";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 import { pokemonTypesListLoader } from "./pokemon-types-list-loader";
 
-vi.mock("@/core/services/pokemon-api", () => ({
+vi.mock("@/features/pokemon/services/pokemon-api", () => ({
   pokemonApi: {
     get: vi.fn(),
   },

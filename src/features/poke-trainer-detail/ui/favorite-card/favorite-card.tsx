@@ -1,6 +1,6 @@
 import { Card } from "@/core/components/card";
-import { Pokemon } from "@/core/services/pokemon-api.types";
 import { noop } from "@/core/utils/noop";
+import { Pokemon } from "@/features/pokemon/services/pokemon-api.types";
 import { StarOff } from "lucide-react";
 import { useFavoritePokemon } from "../../context/favorite-pokemon";
 
