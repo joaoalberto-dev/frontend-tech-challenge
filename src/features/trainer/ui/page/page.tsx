@@ -2,10 +2,10 @@ import { Card } from "@/core/components/card";
 import { EmptyState } from "@/core/components/empty-state";
 import { List } from "@/core/components/list";
 import { Search } from "@/core/components/search";
-import { usePokeTrainerFetch } from "../hooks/use-poke-trainer-fetch";
-import { useFlatPokeTrainers } from "../hooks/use-poke-trainer-flat";
-import { usePokeTrainerSearch } from "../hooks/use-poke-trainer-search";
-import { LoadMore } from "./load-more/load-more";
+import { usePokeTrainerFetch } from "../../hooks/use-poke-trainer-fetch";
+import { useFlatPokeTrainers } from "../../hooks/use-poke-trainer-flat";
+import { usePokeTrainerSearch } from "../../hooks/use-poke-trainer-search";
+import { LoadMore } from "../load-more/load-more";
 
 function PokeTrainerListPage() {
   const { name, handleChange } = usePokeTrainerSearch();
