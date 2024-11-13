@@ -8,9 +8,9 @@ import { usePokemonList } from "@/features/pokemon/hooks/use-pokemon-list";
 import { Swords } from "lucide-react";
 import { ChangeEvent, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { PokemonCard } from "../../pokemon/ui/card/card";
 import { useFavoritePokemon } from "../context/favorite-pokemon";
 import { usePokeTrainerProfile } from "../hooks/use-poke-trainer-profile";
-import { PokemonCard } from "../ui/card/card";
 import { FavoritePokemonCard } from "../ui/favorite-card/favorite-card";
 import { PokeTrainerStats } from "../ui/stats/stats";
 

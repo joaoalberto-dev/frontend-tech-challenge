@@ -1,9 +1,9 @@
 import { Card } from "@/core/components/card";
 import { httpClient } from "@/core/http/client";
 import { Pokemon } from "@/features/pokemon/services/pokemon-api.types";
+import { useFavoritePokemon } from "@/features/trainer/context/favorite-pokemon";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
-import { useFavoritePokemon } from "../../context/favorite-pokemon";
 
 type PokemonCardProps = {
   url: string;
