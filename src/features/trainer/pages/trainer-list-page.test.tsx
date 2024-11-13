@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, test, vi } from "vitest";
 import { usePokeTrainerFetch } from "../hooks/use-poke-trainer-fetch";
 import { useFlatPokeTrainers } from "../hooks/use-poke-trainer-flat";
 import { usePokeTrainerSearch } from "../hooks/use-poke-trainer-search";
-import { PokeTrainerListPage } from "./page";
+import { PokeTrainerListPage } from "./trainer-list-page";
 
 vi.mock("../../hooks/use-poke-trainer-fetch");
 vi.mock("../../hooks/use-poke-trainer-search");

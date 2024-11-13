@@ -4,7 +4,7 @@ import { PokeTrainerDetail } from "@/features/poke-trainer-detail/ui/page";
 import { pokemonListLoader } from "@/features/pokemon/data/pokemon-list-loader";
 import { pokemonTypesListLoader } from "@/features/pokemon/data/pokemon-types-list-loader";
 import { getPokeTrainers } from "@/features/trainer/data/get-poke-trainers";
-import { PokeTrainerListPage } from "@/features/trainer/ui/page/page.tsx";
+import { PokeTrainerListPage } from "@/features/trainer/pages/trainer-list-page";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
