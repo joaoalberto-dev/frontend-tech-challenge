@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { renderHook, waitFor } from "@testing-library/react";
 import { describe, expect, Mock, test, vi } from "vitest";
-import { getPokeTrainerDetail } from "../data/get-poke-trainer-detail";
+import { getPokeTrainerDetail } from "../../trainer/data/get-poke-trainer-detail";
 import { usePokeTrainerProfile } from "./use-poke-trainer-profile";
 
 vi.mock("../data/get-poke-trainer-detail", () => ({

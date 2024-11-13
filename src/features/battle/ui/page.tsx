@@ -1,5 +1,5 @@
-import { useFavoritePokemon } from "@/features/poke-trainer-detail/context/favorite-pokemon";
-import { usePokeTrainerProfile } from "@/features/poke-trainer-detail/hooks/use-poke-trainer-profile";
+import { useFavoritePokemon } from "@/features/trainer/context/favorite-pokemon";
+import { usePokeTrainerProfile } from "@/features/trainer/hooks/use-poke-trainer-profile";
 import { useParams } from "react-router-dom";
 import { useBattleManager } from "../hooks/use-battle-manager";
 import { BattleField } from "./battle-field/battle-field";

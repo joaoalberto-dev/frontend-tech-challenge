@@ -10,9 +10,9 @@ import { ChangeEvent, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useFavoritePokemon } from "../context/favorite-pokemon";
 import { usePokeTrainerProfile } from "../hooks/use-poke-trainer-profile";
-import { PokemonCard } from "./card/card";
-import { FavoritePokemonCard } from "./favorite-card/favorite-card";
-import { PokeTrainerStats } from "./stats/stats";
+import { PokemonCard } from "../ui/card/card";
+import { FavoritePokemonCard } from "../ui/favorite-card/favorite-card";
+import { PokeTrainerStats } from "../ui/stats/stats";
 
 function PokeTrainerDetail() {
   const { id } = useParams();

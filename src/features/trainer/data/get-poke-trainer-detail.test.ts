@@ -1,6 +1,6 @@
 import { rickAndMortyApi } from "@/features/trainer/services/rick-and-morty";
 import { afterEach, describe, expect, test, vi } from "vitest";
-import { getPokeTrainerDetail } from "./get-poke-trainer-detail";
+import { getPokeTrainerDetail } from "../../poke-trainer-detail/data/get-poke-trainer-detail";
 
 vi.mock("@/features/trainer/services/rick-and-morty", () => ({
   rickAndMortyApi: {
