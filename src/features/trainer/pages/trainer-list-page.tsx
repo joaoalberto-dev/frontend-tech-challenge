@@ -1,11 +1,11 @@
 import { Card } from "@/core/components/card";
 import { EmptyState } from "@/core/components/empty-state";
 import { List } from "@/core/components/list";
-import { Search } from "@/core/components/search";
 import { usePokeTrainerFetch } from "../hooks/use-poke-trainer-fetch";
 import { useFlatPokeTrainers } from "../hooks/use-poke-trainer-flat";
 import { usePokeTrainerSearch } from "../hooks/use-poke-trainer-search";
 import { LoadMore } from "../ui/load-more/load-more";
+import { TrainerListHeader } from "../ui/trainer-list-header/trainer-list-header";
 
 function PokeTrainerListPage() {
   const { name, handleChange } = usePokeTrainerSearch();
@@ -14,16 +14,11 @@ function PokeTrainerListPage() {
 
   return (
     <div>
-      <header className="flex flex-col md:flex-row md:justify-between md:items-center items-center justify-center p-5 md:p-10 max-w-full xl:max-w-[1920px] mx-auto">
-        <h1 className="w-full text-3xl md:text-5xl md:w-auto">
-          Pick your champion
-        </h1>
-        <Search
-          isLoading={isLoading}
-          defaultValue={name}
-          onChange={handleChange}
-        />
-      </header>
+      <TrainerListHeader
+        isLoading={isLoading}
+        defaultName={name}
+        onSearchTextChange={handleChange}
+      />
       <div className="p-5 md:p-10 max-w-full xl:max-w-[1920px] mx-auto">
         {characters.length > 0 && (
           <>

@@ -1,14 +1,14 @@
+import { useFavoritePokemon } from "@/features/trainer/context/favorite-pokemon";
 import { useQuery } from "@tanstack/react-query";
 import { render, screen } from "@testing-library/react";
 import { useParams } from "react-router-dom";
 import { beforeEach, describe, expect, test, vi } from "vitest";
-import { useFavoritePokemon } from "../../../trainer/context/favorite-pokemon";
 import { PokemonCard } from "./card";
 
 // Mock the dependencies
 vi.mock("@tanstack/react-query");
 vi.mock("react-router-dom");
-vi.mock("../../context/favorite-pokemon");
+vi.mock("@/features/trainer/context/favorite-pokemon");
 vi.mock("@/core/components/card", () => ({
   Card: ({ name, onClick }: { name: string; onClick: () => void }) => (
     <button onClick={onClick}>{name}</button>

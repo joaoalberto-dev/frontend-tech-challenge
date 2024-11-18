@@ -6,9 +6,9 @@ import { useFlatPokeTrainers } from "../hooks/use-poke-trainer-flat";
 import { usePokeTrainerSearch } from "../hooks/use-poke-trainer-search";
 import { PokeTrainerListPage } from "./trainer-list-page";
 
-vi.mock("../../hooks/use-poke-trainer-fetch");
-vi.mock("../../hooks/use-poke-trainer-search");
-vi.mock("../../hooks/use-poke-trainer-flat");
+vi.mock("../hooks/use-poke-trainer-fetch");
+vi.mock("../hooks/use-poke-trainer-search");
+vi.mock("../hooks/use-poke-trainer-flat");
 
 describe("PokeTrainerListPage", () => {
   const mockLoadMore = vi.fn();

@@ -35,9 +35,7 @@ describe("usePokeTrainerSearch", () => {
     const { result } = renderHook(() => usePokeTrainerSearch(), { wrapper });
 
     act(() => {
-      result.current.handleChange({
-        target: { value: "morty" },
-      } as ChangeEvent<HTMLInputElement>);
+      result.current.handleChange("morty");
     });
 
     expect(result.current.name).toBe("morty");
