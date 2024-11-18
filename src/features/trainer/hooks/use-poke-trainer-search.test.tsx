@@ -1,5 +1,4 @@
 import { act, renderHook } from "@testing-library/react";
-import { ChangeEvent } from "react";
 import { MemoryRouter } from "react-router-dom";
 import { describe, expect, test, vi } from "vitest";
 import { usePokeTrainerSearch } from "./use-poke-trainer-search";
